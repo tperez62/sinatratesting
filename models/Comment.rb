@@ -5,4 +5,5 @@ class Comment
 	property :content	, Text	, required: true
 	
 	belongs_to :post
+	belongs_to :user
 end

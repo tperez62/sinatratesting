@@ -6,4 +6,5 @@ class User
 	property :username	, String	, required: true	, unique: true
 	
 	has n, :posts
+	has n, :comments
 end
