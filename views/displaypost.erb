@@ -1,6 +1,11 @@
 <section name="displaypost">
 	<% @post = Post.get(params[:postid]) %>
+	<% @comments = Comment.all(post_id:@post.id) %>
 	<h1><%= @post.title %></h1><br /><br />
 	<h3>Content:  </h3>
-	<p><%= @post.content %><p>
+	<p><%= @post.content %><p><br />
+	<h3>Comments: </h3>
+	<% @comments.each do |comment| %>
+		<p><%= comment.content %></p>
+	<% end %>
 </section>
