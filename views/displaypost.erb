@@ -6,6 +6,6 @@
 	<p><%= @post.content %><p><br />
 	<h3>Comments: </h3>
 	<% @comments.each do |comment| %>
-		<p><%= comment.content %></p>
+		<p><b><%= comment.user.username %> said:</b>  <%= comment.content %></p>
 	<% end %>
 </section>
