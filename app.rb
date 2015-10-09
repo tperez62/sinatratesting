@@ -25,7 +25,8 @@ get '/users/:id' do
 end
 
 get '/users/:id/posts' do
-	"Display all User Posts"
+	@title = 'Display All User Posts'
+	erb :displayallposts
 end
 
 get '/users/:userid/posts/:postid' do

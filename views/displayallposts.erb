@@ -1,0 +1,9 @@
+<section name="displayallposts">
+	<% @user = User.get(params[:id]) %>
+	<% @posts = Post.all(user_id:@user.id) %>
+	<% @posts.each do |post| %>
+		<h1><%= post.title %></h1><br /><br />
+		<h3>Content: </h3>
+		<p><%= post.content %><p><br /><br />
+	<% end %>
+</section>
