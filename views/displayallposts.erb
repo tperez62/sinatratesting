@@ -4,6 +4,7 @@
 	<% @posts.each do |post| %>
 		<h1><%= post.title %></h1><br /><br />
 		<h3>Content: </h3>
-		<p><%= post.content %><p><br /><br />
+		<p><%= post.content %><p><br />
+		<a href="/users/<%= @user.id %>/posts/<%= post.id %>">Link to Post Page</a>
 	<% end %>
 </section>
