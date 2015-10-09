@@ -13,6 +13,21 @@ get '/' do
 	"Home page"
 end
 
+get '/newuser' do
+	@title = 'New User Page'
+	erb :newuser
+end
+
+post '/newuser' do
+	logger.debug("Creating a new user")
+	@user = User.new
+	@user.email = params[:email]
+	@user.username = params[:username]
+	logger.debug("Saving new user to DB")
+	@user.save
+	redirect '/'
+end
+
 get '/users' do
 	logger.debug("Displaying User Page")
 	"User Page"
