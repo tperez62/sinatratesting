@@ -20,6 +20,7 @@ end
 
 get '/users/:id' do
 	logger.debug("Sending User Display Page")
+	if User.get(params[:id]).nil? then redirect 'not_found' end
 	@title = 'User Display Page'
 	erb :userdisplay
 end
