@@ -43,6 +43,21 @@ get '/users/:id' do
 	erb :userdisplay
 end
 
+get '/users/:id/newpost' do
+	@title = 'New Post Page'
+	erb :newpost
+end
+
+post '/users/:id/newpost' do
+	@user = User.get(params[:id])
+	@post = Post.new
+	@post.title = params[:title]
+	@post.content = params[:content]
+	@post.user = @user
+	@post.save
+	redirect "/users/#{@user.id}"
+end
+
 get '/users/:id/posts' do
 	@title = 'Display All User Posts'
 	erb :displayallposts

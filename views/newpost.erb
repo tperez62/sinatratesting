@@ -1,0 +1,9 @@
+<section name="newpost">
+	<% @user = User.get(params[:id]) %>
+	<h1>Create a new post</h1>
+	<form action="/users/<%= @user.id %>/newpost" method="post">
+		Title: <input type="text" name="title"><br />
+		Content: <input type="text" name="content"><br />
+		<input type="submit" value="Create Post">
+	</form>
+</section>
