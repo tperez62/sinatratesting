@@ -1,0 +1,6 @@
+<section name="userdisplay">
+	<% @user = User.get(params[:id]) %>
+	<h1>Welcome <%= @user.username %>!</h1>
+	<h2>Associated email: <%= @user.email %></h2><br /><br />
+	<h4><a href="/">Home Page</a></h4>
+</section>

@@ -7,5 +7,14 @@ DataMapper.setup :default, "sqlite3://#{Dir.pwd}/sinatratesting.db"
 DataMapper.auto_upgrade!
 
 get '/' do
-	"Hello"
+	"Home page"
+end
+
+get '/users' do
+	"User Page"
+end
+
+get '/users/:id' do
+	@title = 'User Display Page'
+	erb :userdisplay
 end
