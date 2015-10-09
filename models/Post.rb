@@ -6,4 +6,5 @@ class Post
 	property :content	, Text
 	
 	belongs_to :user
+	has n, :comments
 end
