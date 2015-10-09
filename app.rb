@@ -23,3 +23,18 @@ get '/users/:id' do
 	@title = 'User Display Page'
 	erb :userdisplay
 end
+
+get '/users/:id/posts' do
+	"Display all User Posts"
+end
+
+get '/users/:userid/posts/:postid' do
+	logger.debug("Sending Response for Post id: #{params[:postid]}")
+	if Post.get(params[:postid]).nil? then redirect 'not_found' end
+	@title = 'Post Display Page'
+	erb :displaypost
+end
+
+not_found do 
+	"not found"
+end

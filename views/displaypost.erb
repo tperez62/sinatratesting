@@ -1,0 +1,6 @@
+<section name="displaypost">
+	<% @post = Post.get(params[:postid]) %>
+	<h1><%= @post.title %></h1><br /><br />
+	<h2>Content:  </h2>
+	<p><%= @post.content %><p>
+</section>

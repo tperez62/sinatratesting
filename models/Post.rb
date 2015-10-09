@@ -1,9 +1,9 @@
 class Post
 	include DataMapper::Resource
 	
-	property :id	, Serial
-	property :title	, String	, required: true
-	property :content	, String
+	property :id		, Serial
+	property :title		, Text	, required: true
+	property :content	, Text
 	
 	belongs_to :user
 end
