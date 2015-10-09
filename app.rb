@@ -24,8 +24,11 @@ post '/newuser' do
 	@user.email = params[:email]
 	@user.username = params[:username]
 	logger.debug("Saving new user to DB")
-	@user.save
-	redirect '/'
+	if @user.save 
+		redirect '/'
+	else
+		"This email or username is already taken."
+	end
 end
 
 get '/users' do
