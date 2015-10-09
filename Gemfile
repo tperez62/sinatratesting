@@ -5,3 +5,4 @@ source "https://rubygems.org"
 gem 'data_mapper'
 gem 'sinatra'
 gem 'logger'
+gem 'require_all'
