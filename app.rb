@@ -6,7 +6,7 @@ require_all './models'
 
 logger = Logger.new('sinatra_testing_log.log')
 
-#Adding a comment here
+#Changed the Comment
 
 DataMapper.setup :default, "sqlite3://#{Dir.pwd}/sinatratesting.db"
 DataMapper.auto_upgrade!
